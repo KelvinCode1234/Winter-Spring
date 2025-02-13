@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter to Spring</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="icon/sn.pj.png" type="image/x-icon">
+</head>
+<body>
+    <div class="scene">
+        <div class="snowflakes">
+            <div class="snowflake"><img src="icon/sn.png" alt=""></div>
+            <div class="snowflake"><img src="icon/sn.png" alt=""></div>
+            <div class="snowflake"><img src="icon/sn.png" alt=""></div>
+            <div class="snowflake"><img src="icon/sn.png" alt=""></div>
+            <div class="snowflake"><img src="icon/sn.png" alt=""></div>
+        </div>
+
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+
+        <div class="sun"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let body = document.body;
+            let snowflakes = document.querySelector(".snowflakes");
+            let clouds = document.querySelectorAll(".cloud");
+            let sun = document.querySelector(".sun");
+    
+            
+            setTimeout(() => {
+                body.style.transition = "background 3s ease-in";
+                body.style.background = "linear-gradient(to bottom, #ffcbf2, #ffedf3)";
+    
+                
+                if (snowflakes) snowflakes.style.display = "none";
+    
+                
+                clouds.forEach(cloud => {
+                    cloud.style.animation = "none";
+                    cloud.style.opacity = "0"; 
+                });
+    
+                
+                if (sun) {
+                    sun.style.opacity = "1";
+                    sun.style.transform = "scale(1)";
+                    sun.style.top = "50px"; 
+                }
+            }, 13000); 
+        });
+    </script>
+    
+</body>
+</html>
